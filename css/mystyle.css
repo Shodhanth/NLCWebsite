@@ -1,0 +1,59 @@
+body {
+
+	background-color: #e5e5e5;
+	font-family: "Lora", "Helvetica Neue", Helvetica, Arial, sans-serif;
+	color: white;
+
+}
+.intro{
+	background-color: black;
+	text-align: center;
+	padding-top: 30px;
+	font-family: "Lora", "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+.intro h1{
+	padding-bottom: 20px;
+	font-family: "Lora", "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+.jumbotron {
+	color: white;
+	background: url("../assets/intro-bg.jpg");
+	font-family: "Lora", "Helvetica Neue", Helvetica, Arial, sans-serif;
+
+}
+.jumbotron h1{
+	padding-top: 300px;
+	font-family: "Lora", "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+.jumbotron p,i{
+	color: white;
+	font-family: "Lora", "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+.btn{
+	margin-left: 480px;
+	margin-top: 200px;
+}
+.panel h1{
+	color: black;
+	font-family: "Lora", "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+#deadline p{
+	color: black;
+	font-family: "Lora", "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+#announcements p{
+	color: black;
+	font-family: "Lora", "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+#learnmore {
+	background: linear-gradient( #e5e5e5, grey);
+	background-size: cover;
+	color: black;
+}
+#learnmore li{
+	color: black;
+	padding-top: 40px;
+	margin-right: 30px;
+	text-align: center;
+}
