@@ -1,0 +1,103 @@
+
+/* Style for our header texts
+* --------------------------------------- */
+h1{
+	font-size: 5em;
+	font-family: arial,helvetica;
+	color: #fff;
+	margin:0;
+	padding:0;
+}
+
+h2 {
+	font-size: 4.5em;
+	font-family: arial,helvetica;
+	color: #fff;
+	margin:0;
+	padding:0;
+}	
+
+h3 {
+	font-size: 3.5em;
+	font-family: arial, helvetica;
+	color: #fff;
+	margin: 0;
+	padding: 0;
+}
+
+/* Centered texts in each section
+* --------------------------------------- */
+.section{
+	text-align:center;
+}
+
+
+/* Backgrounds will cover all the section
+* --------------------------------------- */
+.section{
+	background-size: cover;
+}
+
+.slide{
+	background-size: cover;
+	color: #000;
+}
+
+/* Defining each sectino background and styles
+* --------------------------------------- */
+#section0{
+	background-image: url('../assets/1.jpg');
+}
+
+#section0-block {
+	top: 35%;
+	transform: translateY(-35%);
+	position: relative;
+}
+
+// #section0 h1{
+// 	top: 50%;
+// 	transform: translateY(-50%);
+// 	position: relative;
+// }
+
+#section2{
+	// background-image: url(https://raw.githubusercontent.com/alvarotrigo/fullPage.js/master/examples/imgs/bg3.jpg);
+	background: #29b6f6;
+	padding: 6% 0 0 0;
+}
+
+#section2 h1, #section2 h2 {
+	// color: #000;
+}
+
+#section3{
+	// background-image: url(https://raw.githubusercontent.com/alvarotrigo/fullPage.js/master/examples/imgs/bg4.jpg);
+	padding: 6% 0 0 0;
+}
+#section3 h1, #section3 h2{
+	color: #000;
+}
+
+	/*Adding background for the slides
+* --------------------------------------- */
+#slide1{
+	// background-image: url(https://raw.githubusercontent.com/alvarotrigo/fullPage.js/master/examples/imgs/bg2.jpg);
+	background: #f48fb1;
+	padding: 6% 0 0 0;
+}
+#slide2{
+	// background-image: url(https://raw.githubusercontent.com/alvarotrigo/fullPage.js/master/examples/imgs/bg5.jpg);
+	background: #e1bee7;
+	padding: 6% 0 0 0;
+}
+
+/* Bottom menu
+* --------------------------------------- */
+#infoMenu {
+	margin-bottom: 25px;
+}
+
+#infoMenu li a {
+	color: #fff;
+}
