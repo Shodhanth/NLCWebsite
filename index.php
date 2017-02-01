@@ -28,7 +28,11 @@
 			});
 		});
 	</script>
-
+	<script type="text/javascript">
+		function scrollToElement(){
+			document.getElementById('section2').scrollIntoView();
+		}
+	</script>
 </head>
 <body>
 <div id="fullpage">
@@ -37,42 +41,45 @@
         	<h3>LTCOE Presents</h3><br>
 	        <h1> NLC </h1><br>
 	        <h3>National Level Conference</h3><br><br>
-	        <center><button class="btn btn-primary">Learn More</button></center>
         </div>
     </div> <!-- END FIRST FULL PAGE -->
 
 	<div class="section" id="section1"> <!-- SECOND FULL PAGE -->
 	    <div class="slide" id="slide1">
 	    	<h1>Announcements</h1>
-	    	<br>
+	    	<div class="container">
+		    	<table class="table table-striped">
+		    		<thead>
+		    			<tr>
+		    				<th><center><h3>Sr No.</h3></center></th>
+		    				<th><center><h3>Announcement</h3></center></th>
+		    				<th><center><h3>Date</h3></center></th>
+		    			</tr>
+		    		</thead>
+		    		<tbody>
+		    			<?php 
+		    				$user = 'root';
+					        $pwd = 'computer';
+					        $host = '127.0.0.1';
+					        $db_name = 'nlc';
+					        $conn = new mysqli($host, $user, $pwd, $db_name);
 
-	    	<h3>
-	    	<?php
-$user = 'root';
-$pwd = '';
-$host = 'localhost';
-$db_name = 'announcements';
+					        $sql = "SELECT * from annouce ORDER BY Created DESC";
+					        $result = $conn->query($sql);
 
-$conn = new mysqli($host, $user, $pwd, $db_name);
-// $db = mysql_select_db($db_name,$conn);
-$sql = "SELECT * FROM announcements";
-$result = $conn->query($sql);
-
-
-if ($result->num_rows > 0) {
-    // output data of each row
-    while($row = $result->fetch_assoc()) {
-        echo  $row['Announcement'];
-    }
-} else {
-    echo "0 results";
-}
-
-       // echo $announcement . id["announcement"];
-  
-$conn->close();
-?>
-</h3>
+					        if( $result->num_rows > 0) {
+		            			while($row = $result->fetch_assoc()) {
+		            				// if($row['Published'] != 0){
+		    			?>
+		    			<tr>
+		    				<td><?php echo $row['SrNo']; ?></td>
+		    				<td><?php echo $row['Annoucement']; ?></td>
+		    				<td><?php echo $row['Created']; ?></td>
+		    			</tr>
+		    			<?php }} /*}*/ ?>
+		    		</tbody>
+		    	</table>
+		    </div>
 	    </div>
 
 	    <div class="slide" id="slide2">
@@ -81,43 +88,80 @@ $conn->close();
 	</div> <!-- END SECOND FULL PAGE -->
 
 	<div class="section" id="section2"> <!-- THIRD FULL PAGE -->
+	<div class="slide" id="slide3">
 		<h2>Participant Login</h2><br><br>
 	    <div class="row">
 	    	<div class="col-xs-6 col-sm-4"></div> 
 	    	<div class="col-xs-6 col-sm-4">  
-		        <form action="#" method="post" role="form">
+		        <form action="auth.php" method="post" role="form">
 		        	<div class="form-group">
-		        		<label for="username">Username</label>
-		        		<input class="form-control" type="text" name="username" required/>
+		        		<label for="usr">Username: </label>
+						<input class="form-control" type="text" id="usr" name="username">
+					<div class="form-group">
+						<label for="passwa">Password</label>
+						<input class="form-control" type="password" id="passwa" name="password">
+					</div>
+					<button type="submit" class="btn btn-warning">Login</button>
 		        	</div>
-		        	<div class="form-group">
-		        		<label for="password">Password</label>
-		        		<input class="form-control" type="password" name="password" required/>
-		        	</div>
-		        	<button type="submit" class="btn btn-primary">Login</button>
-		        	<!--<button onclick="alert('Working on registration');" class="btn btn-primary">Signup</button>-->
+		        	
+		        	
 		        </form><br>
 		    </div>
 		    <div class="col-xs-6 col-sm-4"></div> 
 	    </div>
-    </div> <!-- END THIRD FULL PAGE -->
+	    </div>
+	    <div class="slide" id="slide4">
+	    	<h1>Registration</h1>
+	    	<div class="row">
+	    	<div class="col-xs-6 col-sm-4"></div>
+	    	<div class="col-xs-6 col-sm-4">  
+	    	<form action="register.php" method="post" role="form">
+		        	<div class="form-group">
+		        		<label for="emailreg">Email</label>
+		        		<input class="form-control" type="Email" id="emailreg" name="emailreg" required>
+		        	</div>
+		        	<div class="form-group">
+		        		<label for="collegenamereg">College Name</label>
+		        		<input class="form-control" type="text" id="collegenamereg" name="clgnamereg" required>
+		        	</div>
+		        	<div class="form-group">
+		        		<label for="phonenoreg">Phone Number</label>
+		        		<input class="form-control" type="tel" id="phonenoreg" name="phnoreg" maxlength="10" required>
+		        	</div>
+		        	<div class="form-group">
+		        		<label for="projectreg">Project Name</label>
+		        		<input class="form-control" type="text" id="projectreg" name="pjtnamereg" required>
+		        	</div>
+					<div class="form-group">
+		        		<label for="userreg">Username</label>
+		        		<input class="form-control" type="text" id="userreg" name="usernamereg" required>
+		        	</div>
+		        	<div class="form-group">
+		        		<label for="passreg">Password</label>
+		        		<input class="form-control" type="password" id="passreg" name="passreg" required>
+		        	</div>
 
+					<button type="submit" class="btn btn-primary">Login</button>
+					</form>
+					</div>
+					<div class="col-xs-6 col-sm-4"></div>
+					</div>
+		    </div>
+	    </div>
+    </div> <!-- END THIRD FULL PAGE -->
+    <
     <div class="section" id="section3"> <!-- FOURTH FULL PAGE -->
         <h1>Contact Us here</h1>
     </div> <!-- END FOURTH FULL PAGE -->
 </div>
 
 <div id="infoMenu">
-
-
-<ul>
-    <li class="page-scroll"><a href="#section2">Login</a></li>
-	<li><a href="">Download Rules</a></li>
-	<li><a href="#" id="showExamples">Paper Format</a></li>
-	<li><a href="#">Documentation</a></li>
-	<li><a href="#">Contact</a></li>
-</ul>
-
+	<ul>
+	    <li class="page-scroll"><a onclick="scrollToElement()">Login</a></li>
+		<li><a href="assets/pdf/rules.pdf" download="Rules.pdf" >Download Rules</a></li>
+		<li><a href="#">Documentation</a></li>
+		<li >Contact</a></li>
+	</ul>
 </div>
 
 </body>
